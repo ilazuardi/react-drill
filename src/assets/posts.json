@@ -1,0 +1,17 @@
+[
+    {
+        "title": "Hello World",
+        "content": "Halo dunia, apa kabar hari ini ?",
+        "tags": ["hello", "world"]
+    },
+    {
+        "title": "Belajar React",
+        "content": "Saya sedang belajar React",
+        "tags": ["react", "web"]
+    },
+    {
+        "title": "Belajar Vue",
+        "content": "Saya sedang belajar Vue",
+        "tags": ["vue", "web"]
+    }
+]
