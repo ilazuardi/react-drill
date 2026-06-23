@@ -1,10 +1,14 @@
-import { useState } from "react"
+import { useState, type ChangeEvent } from "react"
 
-function Search(props) {
+interface SearchProps {
+    onSearchChange: (value: string) => void
+}
+
+function Search(props: SearchProps) {
 
     const [search, setSearch] = useState("")
     
-    const onSearchChange = (event) => {
+    const onSearchChange = (event: ChangeEvent<HTMLInputElement>) => {
         setSearch(event.target.value)
         props.onSearchChange(event.target.value)
     }
@@ -15,7 +19,7 @@ function Search(props) {
                 Cari artikel : <input onChange={onSearchChange}></input>
             </div>
             <br />
-            <small>Ditemukan {} data dengan pencarian kata {search}</small>
+            <small>Ditemukan {} data dengan pencarian kata : {search}</small>
         </>
     )
 }

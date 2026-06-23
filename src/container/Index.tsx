@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import posts from "../assets/posts.json"
+import initialPosts from "../assets/posts.json"
 import Article from "../components/Article";
 import Search from "../components/Search"
 
@@ -11,19 +11,21 @@ interface Post {
 
 function Index() {
     const [posts, setPosts] = useState<Post[]>([])
-    const searchChange = (value) => {
-        setPosts(value.target.value)
-        
-    }
 
     useEffect(() => {
         const fetchData = async () => {
-            const postsData = posts as Post[]
-            console.log(typeof postsData);
+            const postsData = initialPosts as Post[]
             setPosts(postsData)
         }
         fetchData()
     }, [])
+
+    const searchChange = (value: string) => {
+        const filteredPosts = initialPosts.filter((item) => 
+            item.title.toLowerCase().includes(value.toLowerCase()) || item.content.toLowerCase().includes(value.toLowerCase())
+        )
+        setPosts(filteredPosts)
+    }
 
     return (
         <>
