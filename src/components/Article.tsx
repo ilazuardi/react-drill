@@ -1,8 +1,12 @@
+import { newestRange } from "../utils/date-utils"
+
 function Article(props: any) {
     return (
         <>
             <article>
-                <h3>{props.title}</h3>
+                <h3>
+                    {props.title} 
+                    {newestRange(props.created_at) && <span className="badge-new">New</span>}</h3> 
                 <p>{props.content}</p>
                 <p>Tags: {
                         props.tags.map((tag: string, index: number) => {
@@ -11,7 +15,6 @@ function Article(props: any) {
                                 }</span>
                         })
                     }
-
                 </p>
             </article>
         </>

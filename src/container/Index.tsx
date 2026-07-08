@@ -11,11 +11,13 @@ interface Post {
 
 function Index() {
     const [posts, setPosts] = useState<Post[]>([])
+    const [totalPosts, setTotalPosts] = useState(0)
 
     useEffect(() => {
         const fetchData = async () => {
             const postsData = initialPosts as Post[]
             setPosts(postsData)
+            setTotalPosts(postsData.length)
         }
         fetchData()
     }, [])
@@ -25,11 +27,12 @@ function Index() {
             item.title.toLowerCase().includes(value.toLowerCase()) || item.content.toLowerCase().includes(value.toLowerCase())
         )
         setPosts(filteredPosts)
+        setTotalPosts(filteredPosts.length)
     }
 
     return (
         <>
-            <Search onSearchChange={searchChange}/>
+            <Search onSearchChange={searchChange} total={totalPosts}/>
             {
                 posts?.map((props, index) => (
                     <Article key={index} {...props} />

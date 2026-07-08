@@ -2,6 +2,7 @@ import { useState, type ChangeEvent } from "react"
 
 interface SearchProps {
     onSearchChange: (value: string) => void
+    total: number
 }
 
 function Search(props: SearchProps) {
@@ -19,7 +20,7 @@ function Search(props: SearchProps) {
                 Cari artikel : <input onChange={onSearchChange}></input>
             </div>
             <br />
-            <small>Ditemukan {} data dengan pencarian kata : {search}</small>
+            <small>Ditemukan {props.total} data dengan pencarian kata : {search}</small>
         </>
     )
 }

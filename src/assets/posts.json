@@ -2,16 +2,19 @@
     {
         "title": "Hello World",
         "content": "Halo dunia, apa kabar hari ini ?",
-        "tags": ["hello", "world"]
+        "tags": ["hello", "world"],
+        "created_at": "2026-06-29"
     },
     {
         "title": "Belajar React",
         "content": "Saya sedang belajar React",
-        "tags": ["react", "web"]
+        "tags": ["react", "web"],
+        "created_at": "2026-05-29"
     },
     {
         "title": "Belajar Vue",
         "content": "Saya sedang belajar Vue",
-        "tags": ["vue", "web"]
+        "tags": ["vue", "web"],
+        "created_at": "2026-06-26"
     }
 ]

@@ -182,3 +182,18 @@
     border-right-color: var(--border);
   }
 }
+
+.badge-new {
+  display: inline-block;
+  background-color: #ef4444; /* Merah cerah modern */
+  color: #ffffff;            /* Teks putih */
+  font-size: 0.65rem;        /* Ukuran font kecil */
+  font-weight: 700;          /* Teks tebal */
+  text-transform: uppercase; /* Huruf besar semua */
+  padding: 2px 8px;          /* Jarak dalam (atas-bawah, kiri-kanan) */
+  border-radius: 9999px;     /* Membuat bentuk pill/kapsul bulat sempurna */
+  margin-left: 8px;          /* Jarak dari judul artikel */
+  vertical-align:text-top;    /* Menyelaraskan tinggi dengan teks judul */
+  letter-spacing: 0.05em;    /* Sedikit jarak antar huruf agar mudah dibaca */
+  box-shadow: 0 2px 4px rgba(239, 68, 68, 0.3); /* Efek bayangan merah lembut */
+}
