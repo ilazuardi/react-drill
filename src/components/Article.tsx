@@ -1,12 +1,17 @@
 import { newestRange } from "../utils/date-utils"
+import { BadgeNew } from "./BadgeNew"
 
 function Article(props: any) {
+
+    const onClickEvent = e => {
+        
+    }
     return (
         <>
-            <article>
+            <article onClick={onClickEvent}>
                 <h3>
                     {props.title} 
-                    {newestRange(props.created_at) && <span className="badge-new">New</span>}</h3> 
+                    {newestRange(props.created_at) && <BadgeNew text="new"/>}</h3> 
                 <p>{props.content}</p>
                 <p>Tags: {
                         props.tags.map((tag: string, index: number) => {
